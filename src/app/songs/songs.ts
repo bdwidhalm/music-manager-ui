@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
+import { SongApiService } from '../services/song-api.service';
 
 @Component({
   selector: 'app-songs',
@@ -60,4 +61,16 @@ export class Songs {
     "title": "Our God",
     "track_num": "CountAndTotalTuple(count=None, total=None)"
   }]
+
+  constructor(private api: SongApiService) {}
+
+  ngOnInit() {
+    this.loadSongs();
+  }
+
+  loadSongs() {
+    this.api.getSongs().subscribe(data => {
+      this.dataSource = data;
+    });
+  }
 }
