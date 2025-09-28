@@ -1,3 +1,19 @@
+<mat-toolbar>
+  <button matIconButton class="toolbar-icon" [matMenuTriggerFor]="menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button routerLink="" mat-menu-item><mat-icon>home</mat-icon>Home</button>
+    <button routerLink="/songs" mat-menu-item><mat-icon>library_music</mat-icon>Songs</button>
+  </mat-menu>
+  <span>Music Manager</span>
+  <span class="toolbar-spacer"></span>
+  <button matIconButton class="toolbar-icon favorite-icon">
+    <mat-icon>favorite</mat-icon>
+  </button>
+  <button matIconButton class="toolbar-icon">
+    <mat-icon>share</mat-icon>
+  </button>
+</mat-toolbar>
 
-Hello {{ city }}, {{ 1 + 1 }}
 <router-outlet /> 
